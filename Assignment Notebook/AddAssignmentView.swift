@@ -14,14 +14,14 @@ struct AddAssignmentView: View {
     @State private var description = ""
     @State private var dueDate = Date()
     @Environment(\.presentationMode) var presentationMode
-    static let priorities = ["High", "Medium", "Low"]
+    static let courses = ["English", "Math", "Social Studies", "Science", "Gym", "Language", "Elective", "No Class"]
     
     var body: some View {
         
         NavigationView {
             Form {
-                Picker("Assignment Urgency", selection: $course) {
-                    ForEach(Self.priorities, id: \.self) { priority in
+                Picker("Class", selection: $course) {
+                    ForEach(Self.courses, id: \.self) { priority in
                         Text(priority)
                     }
                 }
