@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
     
     @ObservedObject var assignmentList = AssignmentList()
-    @State private var showingAddItemView = false
+    @State private var showingAddItemView = false    
     
     var body: some View {
         
@@ -38,12 +38,15 @@ struct ContentView: View {
                 AddAssignmentView(assignmentList: assignmentList)
             })
             .navigationBarTitle("Assignments", displayMode: .inline)
-            .navigationBarItems(leading: EditButton(),
+            .navigationBarItems(leading: EditButton().foregroundColor(.purple),
                                 trailing: Button(action: {
                                                     showingAddItemView = true}) {
-                                    Image(systemName: "plus")
+                                    Image(systemName: "plus").foregroundColor(.purple)
+
+                                    
                                 })
         }
+        
     }
 }
 

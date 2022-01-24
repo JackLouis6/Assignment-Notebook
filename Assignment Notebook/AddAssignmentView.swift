@@ -36,8 +36,9 @@ struct AddAssignmentView: View {
                                 assignmentList.items.append(item)
                                 presentationMode.wrappedValue.dismiss()
                             }
-
-                        })
+                        }
+            .foregroundColor(.purple)
+            )
         }
     }
 }
