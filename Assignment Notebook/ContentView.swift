@@ -10,7 +10,11 @@ import SwiftUI
 struct ContentView: View {
     
     @ObservedObject var assignmentList = AssignmentList()
-    @State private var showingAddItemView = false    
+    @State private var showingAddItemView = false
+    init () {
+        UITableView.appearance().backgroundColor = .purple
+    }
+// Credits to Jack Lais for this code ^
     
     var body: some View {
         
@@ -26,6 +30,8 @@ struct ContentView: View {
                         Spacer()
                         Text(item.dueDate, style: .date)
                     }
+                    .listRowBackground(Color.gray)
+    // Credits to Jack Lais for this code ^
                 }
                 .onMove(perform: { indices, newOffset in
                     assignmentList.items.move(fromOffsets: indices, toOffset: newOffset)
